@@ -1,0 +1,23 @@
+#!/bin/bash
+
+export TERM=screen-256color-bce
+tmux has-session -t development
+if [ $? != 0 ]
+then
+    tmux new-session -s dev -n ws0 -d
+    tmux split-window -h -t dev
+    tmux split-window -v -t dev
+
+    tmux new-window -n ws1
+    tmux split-window -h -t dev
+    tmux split-window -v -t dev
+
+    tmux new-window -n ws2
+    tmux split-window -h -t dev
+    tmux split-window -v -t dev
+
+    tmux new-window -n xterm
+
+    tmux select-window -t dev:0
+fi
+tmux attach -t dev
