@@ -16,7 +16,9 @@ then
     tmux split-window -h -t dev
     tmux split-window -v -t dev
 
-    tmux new-window -n xterm
+    tmux new-window -n ws3
+    tmux split-window -h -t dev
+    tmux split-window -v -t dev
 
     tmux select-window -t dev:0
 fi
