@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if acpi | grep -qw Charging; then
+    acpi | cut -c12-34
+else
+    acpi | cut -c12-37
+fi
